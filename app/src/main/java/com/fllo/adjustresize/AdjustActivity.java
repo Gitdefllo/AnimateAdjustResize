@@ -69,8 +69,8 @@ public class AdjustActivity extends AppCompatActivity {
     }
 
     private void setAnimationDown() {
-        Animation b1 = new TranslateAnimation(0, 0, -(footerButton.getHeight() * 4), 30);
-        b1.setDuration(200);
+        Animation b1 = new TranslateAnimation(0, 0, -30, 30);
+        b1.setDuration(300);
         b1.setFillAfter(true);
 
         final Animation b2 = new TranslateAnimation(0, 0, 30, 0);
