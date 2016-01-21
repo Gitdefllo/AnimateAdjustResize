@@ -7,6 +7,8 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
+import com.fllo.adjustresize.utils.AdjustUtils;
+
 /**
  * Create (an illusion) to move a footer button with the SoftKeyboard:
  *
@@ -41,12 +43,13 @@ public class AdjustActivity extends AppCompatActivity {
 
     private void setAnimationUp() {
         footerButton.setVisibility(View.GONE);
+        float dpY = AdjustUtils.pxToDp(20, this);
 
-        Animation a1 = new TranslateAnimation(0, 0, footerButton.getHeight() * 4, -20);
+        Animation a1 = new TranslateAnimation(0, 0, footerButton.getHeight() * 4, -(dpY));
         a1.setDuration(250);
         a1.setFillAfter(true);
 
-        final Animation a2 = new TranslateAnimation(0, 0, -20, 0);
+        final Animation a2 = new TranslateAnimation(0, 0, -(dpY), 0);
         a2.setDuration(320);
         a2.setFillAfter(true);
 
@@ -69,11 +72,12 @@ public class AdjustActivity extends AppCompatActivity {
     }
 
     private void setAnimationDown() {
-        Animation b1 = new TranslateAnimation(0, 0, -30, 30);
+        float dpY = AdjustUtils.pxToDp(30, this);
+        Animation b1 = new TranslateAnimation(0, 0, -(dpY), dpY);
         b1.setDuration(300);
         b1.setFillAfter(true);
 
-        final Animation b2 = new TranslateAnimation(0, 0, 30, 0);
+        final Animation b2 = new TranslateAnimation(0, 0, dpY, 0);
         b2.setDuration(320);
         b2.setFillAfter(true);
 
